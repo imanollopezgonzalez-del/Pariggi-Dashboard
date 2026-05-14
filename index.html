@@ -865,7 +865,7 @@ function buildYoyChart(){
               const ds = ctx.datasetIndex;
               const val = ctx.raw;
               if(val===null || val===undefined) return 'Sin datos';
-              const isKg = mk==='kg';
+              const isKg = mk==='kilos';
               const valFmt = isKg
                 ? Math.round(val).toLocaleString('es-AR')+' kg'
                 : fM(val);
@@ -894,7 +894,7 @@ function buildYoyChart(){
         x:{ grid:{color:'#1E1E1E'} },
         y:{
           grid:{color:'#1E1E1E'},
-          ticks:{ callback: v => mk==='kg'
+          ticks:{ callback: v => mk==='kilos'
             ? Math.round(v).toLocaleString('es-AR')+' kg'
             : fMS(v) }
         }
